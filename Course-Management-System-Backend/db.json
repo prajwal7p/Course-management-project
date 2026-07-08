@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": "101",
+      "username": "Admin",
+      "role": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin@123"
+    },
+    {
+      "id": "zQzUdV2seHE",
+      "username": "Akshay",
+      "email": "akshay@gmail.com",
+      "password": "akshay@123",
+      "role": "user"
+    },
+    {
+      "id": "X-q9RF1of2o",
+      "username": "Shekhar",
+      "email": "shekhar@gmail.com",
+      "password": "shekhar@123",
+      "role": "user"
+    },
+    {
+      "id": "n47cR_IptvQ",
+      "username": "ujjwal",
+      "email": "ujjwal@gmail.com",
+      "password": "ujjwal@123",
+      "role": "user"
+    },
+    {
+      "id": "jHx8yTX2Uug",
+      "username": "Sagar",
+      "email": "sagar@gmail.com",
+      "password": "sagar@123",
+      "role": "user"
+    },
+    {
+      "id": "qoTGJPT7-8o",
+      "username": "prajwal",
+      "email": "pr@gmail.com",
+      "password": "p@123",
+      "role": "user"
+    }
+  ],
+  "cart": [],
+  "courses": [
+    {
+      "c_name": "Python",
+      "c_duration": "3 month",
+      "c_fee": 30000,
+      "c_trainer": "chethan",
+      "c_desc": "This is the course to go from 0 to hero in python",
+      "c_image": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png",
+      "c_rating": 4,
+      "c_reviews": 1000,
+      "id": "ofjZ1Af8FRU"
+    },
+    {
+      "c_name": "Java",
+      "c_duration": "3 month",
+      "c_fee": 25000,
+      "c_trainer": "Pawan",
+      "c_desc": "This is the course to go from 0 to hero in java",
+      "c_image": "https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png",
+      "c_rating": 4.5,
+      "c_reviews": 5000,
+      "id": "umo3maF-wwY"
+    },
+    {
+      "c_name": "JS",
+      "c_duration": "2",
+      "c_fee": "2000",
+      "c_trainer": "Ravi Sir",
+      "c_desc": "wertykhlj;klgdwdffdhtw45yrhtrtsbgd",
+      "c_image": "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png",
+      "id": "4YOdMXqVcJ4"
+    },
+    {
+      "c_name": "ReactJs",
+      "c_duration": "1",
+      "c_fee": "5000",
+      "c_trainer": "Ravi Sir",
+      "c_desc": "this is teh complete react 2026 bootcamp",
+      "c_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1MndL-Xp1JcnqaB0YOqTp6zDjrwYyGKsPA&s",
+      "id": "iRvwhalILDs"
+    },
+    {
+      "c_name": "ReactJs",
+      "c_duration": "1",
+      "c_fee": "5000",
+      "c_trainer": "Ravi Sir",
+      "c_desc": "this is teh complete react 2026 bootcamp",
+      "c_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1MndL-Xp1JcnqaB0YOqTp6zDjrwYyGKsPA&s",
+      "id": "tYsVICgm6zQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
