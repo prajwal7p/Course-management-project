@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Layout from "./Layout/layout";
+import Layout from "./Layout/Layout";
 import Courses from "./Pages/Courses";
 import Cart from "./Pages/Cart";
 import AddCourse from "./Pages/AddCourse";
