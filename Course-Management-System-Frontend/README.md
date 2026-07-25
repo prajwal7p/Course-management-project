@@ -1,5 +1,21 @@
 # React + Vite
 
+## API configuration
+
+The frontend sends API requests through `/api` while running locally; Vite
+proxies those requests to the JSON server at `http://localhost:5000`.
+
+For a deployed build, configure `VITE_API_URL` with the public URL of the
+deployed backend before building (for example, in the Vercel environment
+variables). Do not set it to `localhost`: in a visitor's browser that points to
+their own computer, not the API server.
+
+Start the local backend from `Course-Management-System-Backend` with:
+
+```bash
+npm start
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

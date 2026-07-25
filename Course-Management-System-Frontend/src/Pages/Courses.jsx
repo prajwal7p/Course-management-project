@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import toast from "react-hot-toast";
 import CourseCard from "../Components/CourseCard";
+import api, { getApiErrorMessage } from "../api/client";
 
 const Courses = () => {
   const [allCourses, setAllCourses] = useState([]);
 
   const getAllCourses = async () => {
-    const res = await axios.get("http://localhost:5000/courses");
-    setAllCourses(res.data);
+    try {
+      const res = await api.get("/courses");
+      setAllCourses(res.data);
+    } catch (error) {
+      toast.error(getApiErrorMessage(error));
+    }
   };
 
   useEffect(() => {

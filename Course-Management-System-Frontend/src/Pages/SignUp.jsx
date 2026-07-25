@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { v4 as randomId } from "uuid";
-import axios from "axios";
+import api, { getApiErrorMessage } from "../api/client";
 const SignUp = () => {
   let navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -37,22 +37,20 @@ const SignUp = () => {
       role: "user",
     };
 
-    let alreadyExist = await axios.get(
-      `http://localhost:5000/users?email=${formData.email}`,
-    );
-    console.log(alreadyExist);
-    if (alreadyExist.data.length > 0) {
-      toast.error("user already exists");
-    } else {
-      try {
-        let res = await axios.post("http://localhost:5000/users", userData);
-        console.log(res);
+    try {
+      const alreadyExist = await api.get("/users", {
+        params: { email: formData.email },
+      });
+
+      if (alreadyExist.data.length > 0) {
+        toast.error("User already exists");
+      } else {
+        await api.post("/users", userData);
         toast.success("User Registered Successfully");
-        console.log("User Registered:", userData);
         navigate("/login");
-      } catch (err) {
-        toast.error("Cannot Register");
       }
+    } catch (error) {
+      toast.error(getApiErrorMessage(error));
     }
 
     // Reset form

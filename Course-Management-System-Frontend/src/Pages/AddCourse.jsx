@@ -1,8 +1,8 @@
-import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { v4 as randomId } from "uuid";
+import api, { getApiErrorMessage } from "../api/client";
 const AddCourse = () => {
   let navigate = useNavigate();
   let [courseData, setCourseData] = useState({
@@ -25,13 +25,16 @@ const AddCourse = () => {
     e.preventDefault();
     let allData = { ...courseData, id: randomId() };
     console.log(allData);
-    let res = await axios.post("http://localhost:5000/courses", allData);
-    console.log(res);
-    if (res.status == 201) {
-      toast.success("Course Created Successfully");
-      navigate("/");
-    } else {
-      toast.error("Not able to add the course");
+    try {
+      const res = await api.post("/courses", allData);
+      if (res.status === 201) {
+        toast.success("Course Created Successfully");
+        navigate("/");
+      } else {
+        toast.error("Not able to add the course");
+      }
+    } catch (error) {
+      toast.error(getApiErrorMessage(error));
     }
   };
 
