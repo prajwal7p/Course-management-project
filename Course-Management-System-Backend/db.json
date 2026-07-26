@@ -93,6 +93,50 @@
       "c_desc": "this is teh complete react 2026 bootcamp",
       "c_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1MndL-Xp1JcnqaB0YOqTp6zDjrwYyGKsPA&s",
       "id": "tYsVICgm6zQ"
+    },
+    {
+      "id": "nodejs-bootcamp-2026",
+      "c_name": "Node.js API Development",
+      "c_duration": "8 Weeks",
+      "c_fee": 18000,
+      "c_trainer": "Aarav Mehta",
+      "c_desc": "Build secure REST APIs with Node.js, Express, authentication, and deployment.",
+      "c_image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=900&q=80",
+      "c_rating": 4.7,
+      "c_reviews": 842
+    },
+    {
+      "id": "uiux-design-2026",
+      "c_name": "UI/UX Design Fundamentals",
+      "c_duration": "6 Weeks",
+      "c_fee": 12000,
+      "c_trainer": "Nisha Kapoor",
+      "c_desc": "Create polished user experiences with design systems, wireframes, and Figma prototypes.",
+      "c_image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=900&q=80",
+      "c_rating": 4.6,
+      "c_reviews": 615
+    },
+    {
+      "id": "sql-analytics-2026",
+      "c_name": "SQL & Data Analytics",
+      "c_duration": "7 Weeks",
+      "c_fee": 15000,
+      "c_trainer": "Rahul Verma",
+      "c_desc": "Learn SQL, data modelling, dashboards, and practical analysis with real datasets.",
+      "c_image": "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=900&q=80",
+      "c_rating": 4.8,
+      "c_reviews": 974
+    },
+    {
+      "id": "aws-cloud-2026",
+      "c_name": "AWS Cloud Essentials",
+      "c_duration": "5 Weeks",
+      "c_fee": 20000,
+      "c_trainer": "Priya Shah",
+      "c_desc": "Deploy cloud applications using AWS compute, storage, networking, and monitoring services.",
+      "c_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80",
+      "c_rating": 4.7,
+      "c_reviews": 703
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

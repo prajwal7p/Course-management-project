@@ -23,7 +23,7 @@ const AddCourse = () => {
 
   let handleSubmit = async e => {
     e.preventDefault();
-    let allData = { ...courseData, id: randomId() };
+    const allData = { ...courseData, c_fee: Number(courseData.c_fee), id: randomId() };
     console.log(allData);
     try {
       const res = await api.post("/courses", allData);
@@ -80,7 +80,8 @@ const AddCourse = () => {
             </label>
             <input
               onChange={handleChange}
-              type="text"
+              type="number"
+              min="0"
               value={c_fee}
               name="c_fee"
               placeholder="Enter fee"

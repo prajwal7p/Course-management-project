@@ -2,48 +2,56 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
+const normalizeCourse = course => ({
+  ...course,
+  id: course.id ?? course._id,
+  title: course.c_name ?? course.title,
+  image: course.c_image ?? course.image,
+  price: Number(course.c_fee ?? course.price) || 0,
+});
+
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (course) => {
-    const exist = cart.find((item) => item._id === course._id);
+    const itemToAdd = normalizeCourse(course);
 
-    if (exist) {
-      setCart(
-        cart.map((item) =>
-          item._id === course._id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...course, quantity: 1 }]);
-    }
+    setCart(currentCart => {
+      const exists = currentCart.find(item => item.id === itemToAdd.id);
+
+      return exists
+        ? currentCart.map(item =>
+            item.id === itemToAdd.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item,
+          )
+        : [...currentCart, { ...itemToAdd, quantity: 1 }];
+    });
   };
 
   const removeFromCart = (id) => {
-    setCart(cart.filter((item) => item._id !== id));
+    setCart(currentCart => currentCart.filter(item => item.id !== id));
   };
 
   const increaseQuantity = (id) => {
-    setCart(
-      cart.map((item) =>
-        item._id === id
+    setCart(currentCart =>
+      currentCart.map(item =>
+        item.id === id
           ? { ...item, quantity: item.quantity + 1 }
           : item
-      )
+      ),
     );
   };
 
   const decreaseQuantity = (id) => {
-    setCart(
-      cart
-        .map((item) =>
-          item._id === id
+    setCart(currentCart =>
+      currentCart
+        .map(item =>
+          item.id === id
             ? { ...item, quantity: item.quantity - 1 }
-            : item
+            : item,
         )
-        .filter((item) => item.quantity > 0)
+        .filter(item => item.quantity > 0),
     );
   };
 
